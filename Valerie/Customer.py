@@ -34,3 +34,8 @@ class Customer:
     #  combine given_name and family_name to set the full_name attribute 
     def set_full_name(self):
         self.full_name = f"{self.given_name} {self.family_name}"
+
+    # Retrieve all customer instances
+    @classmethod
+    def all(cls):
+        return cls.all_customers
