@@ -1,4 +1,11 @@
-class Restaurant:
-    def __init__(self, given_name = None, family_name = None):  
-        self._given_name = given_name
-        self._family_name = family_name
+ #!/usr/bin/env python3
+
+# Define a class Customer 
+class Customer:
+    # Class attribute to store all instances of Customer
+    all_customers = []  
+    
+    #rs
+        
+    # Set the given_name attribute
+   #
