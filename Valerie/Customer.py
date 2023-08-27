@@ -14,7 +14,8 @@ class Customer:
         self.full_name = None
         # Call the set_full_name method to set the full_name
         self.set_full_name()
-        Customer.all_customers.append(self)  # Add the instance to the list of all customers
+        # Add the instance to the list of all customers
+        Customer.all_customers.append(self)  
         
     # Set the given_name attribute
    #
