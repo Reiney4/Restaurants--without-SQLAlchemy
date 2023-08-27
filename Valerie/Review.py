@@ -39,6 +39,18 @@ class Review:
 
         return printedReviews
     
+    # creating an instance of the review class
+myreview = Review("Valerie Kandagor", "Sippin serenade", 19)
+newreview = Review("Enrico Suarez", "Del Ruiz", " 20")
+
+# getting the ratings of the reviews using the rating() method
+print(myreview.rating)
+print(newreview.rating)
+
+# getting all the reviews
+all_reviews = Review.all()
+print(all_reviews)
+
 
 
     
