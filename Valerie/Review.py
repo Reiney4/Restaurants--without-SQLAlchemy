@@ -31,13 +31,14 @@ class Review:
     @classmethod
     #  the  method all() takes the class itself as the an argument(cls) method returns all reviews that have been created
     def all(cls):
-        # initialize a variable with an empty list
+        # created a variable with an empty list
         printedReviews = []
         for review in cls.all_reviews:
             # append cause it has an empty list
-            printedReviews.append(f"Customer: {review.customer}, Rating: {review.rating}")
+             printedReviews.append(f"Customer: {review.customer}, Rating: {review.rating}")
 
-   
+        return printedReviews
+    
 
 
     
