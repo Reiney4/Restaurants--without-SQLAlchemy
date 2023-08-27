@@ -12,6 +12,8 @@ class Review:
         self._rating = None
           # Adding the review to the all_reviews list
         Review.all_reviews.append(self)
+        if rating is not None:
+            self.set_rating(rating)
 
 
 
