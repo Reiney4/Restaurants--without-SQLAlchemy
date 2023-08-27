@@ -1,2 +1,5 @@
+#!/usr/bin/env python3
+
 class Review:
-    def __init__(self, customer, restaurant = None, rating = ):
+    # Class attribute to store all instances of Review
+    all_reviews = []
