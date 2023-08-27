@@ -30,3 +30,7 @@ class Customer:
             self.family_name = str(family_name)
         else:
             print("Family name must be a string")
+
+    #  combine given_name and family_name to set the full_name attribute 
+    def set_full_name(self):
+        self.full_name = f"{self.given_name} {self.family_name}"
