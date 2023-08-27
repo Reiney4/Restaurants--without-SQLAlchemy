@@ -14,11 +14,19 @@ class Review:
         Review.all_reviews.append(self)
         if rating is not None:
             self.set_rating(rating)
-            # used to retrieve the value of a property 
+            # used to retrieve the value of a property
+            
             def get_rating(self):
              return self._rating    
-        
-    #
+      
+         #used setter to ensure the rating is an interger
+    def set_rating(self, rating):
+        if isinstance (rating,int):
+            self._rating = rating
+            
+        else:
+            print("Rating must be an integer")  
+   
 
 
     
