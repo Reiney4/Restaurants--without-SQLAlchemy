@@ -26,3 +26,19 @@ class Review:
 
     # Create the 'rating' property using get_rating and set_rating methods
     rating = property(get_rating, set_rating)
+
+# use @classmethod decorator to define a method that operates on the class itself
+    @classmethod
+    #  the  method all() takes the class itself as the an argument(cls) method returns all reviews that have been created
+    def all(cls):
+        # initialize a variable with an empty list
+        printedReviews = []
+        for review in cls.all_reviews:
+            # append cause it has an empty list
+            printedReviews.append(f"Customer: {review.customer}, Rating: {review.rating}")
+
+   
+
+
+    
+     
