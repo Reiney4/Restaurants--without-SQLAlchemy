@@ -14,8 +14,12 @@ class Customer:
         self.full_name = None
         # Call the set_full_name method to set the full_name
         self.set_full_name()
-        # Add the instance to the list of all customers
-        Customer.all_customers.append(self)  
+        # Add the instance to the list of all customers from self
+        Customer.all_customers.append(self)
         
     # Set the given_name attribute
-   #
+    def set_given_name(self, given_name):
+        if isinstance(given_name, str):
+            self.given_name = str(given_name)
+        else:
+            print("Given name must be a string")
