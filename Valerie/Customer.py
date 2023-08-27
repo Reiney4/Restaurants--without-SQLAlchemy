@@ -23,3 +23,10 @@ class Customer:
             self.given_name = str(given_name)
         else:
             print("Given name must be a string")
+
+     # Set the family_name attribute
+    def set_family_name(self, family_name):
+        if isinstance(family_name, str):
+            self.family_name = str(family_name)
+        else:
+            print("Family name must be a string")
