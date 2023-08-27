@@ -14,7 +14,11 @@ class Review:
         Review.all_reviews.append(self)
         if rating is not None:
             self.set_rating(rating)
-
+            # used to retrieve the value of a property 
+            def get_rating(self):
+             return self._rating    
+        
+    #
 
 
     
