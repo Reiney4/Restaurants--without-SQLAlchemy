@@ -43,3 +43,8 @@ class Customer:
     # Creating instances of the Customer class
 mycustomer = Customer("Valerie", "Kandagor")
 newCustomer = Customer("Vicky", "Kendy")
+
+# used for loop to access all customers and printing full names
+all_customers = Customer.all()
+for customer in all_customers:
+    print(customer.full_name)
