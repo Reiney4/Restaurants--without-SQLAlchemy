@@ -39,3 +39,7 @@ class Customer:
     @classmethod
     def all(cls):
         return cls.all_customers
+    
+    # Creating instances of the Customer class
+mycustomer = Customer("Valerie", "Kandagor")
+newCustomer = Customer("Vicky", "Kendy")
