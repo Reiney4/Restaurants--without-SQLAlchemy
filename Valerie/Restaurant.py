@@ -1,26 +1,27 @@
 #created and initialized the class restaurant
 class Restaurant:
-    def __init__(self, name=None):
-        self._name = None
-        if name is not None:
-            self.set_name(name)  
-    
-    # Using the setter here to set name
-    def get_name(self):
+    def __init__(self, name):
+        #sets to private  remove none
+        self._name = name
+        
+    # Using the getter here to set name shd not change or @property
+    def name(self):
         return self._name
     
-    def set_name(self, name):
-        if isinstance(name, str):
-            self._name = name
-        else:
-            print("Name must a string!")
+    #a list of reviews should be returned
+    def reviews(self):
+        return [review for review in Review.all() if review.restaurant()== self._name]
+    
+    #a list of customersshould be returned
+    def customers(self):
+        return set([review.customer() for review in  self.reviews()] )
+
+    
     
 # Create an instance of the Restaurant class
 restaurant = Restaurant("Sippin Serenade")
+print(restaurant.name())  
 
-# Accessing the name using the getter
-print(restaurant.get_name())  
-
-# Using the setter to change the name
-restaurant.set_name("Del Ruiz")
-print(restaurant.get_name()) 
+# name cannot be changed
+restaurant.name("Del Ruiz")
+print(restaurant.name()) 
