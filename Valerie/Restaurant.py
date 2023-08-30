@@ -16,7 +16,13 @@ class Restaurant:
     def customers(self):
         return set([review.customer() for review in  self.reviews()] )
 
-    
+    #calculate the average string
+    def average_star_rating(self):
+        if not self.reviews():
+            return 0  # No reviews, so average is 0
+        total_ratings = sum(review.rating() for review in self.reviews())
+        average = total_ratings / len(self.reviews())
+        return average
     
 # Create an instance of the Restaurant class
 restaurant = Restaurant("Sippin Serenade")
