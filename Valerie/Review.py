@@ -14,7 +14,7 @@ class Review:
             self.set_rating(rating)
 
     # Used to retrieve the value of the 'rating' property
-    def get_rating(self):
+    def rating(self):
         return self._rating
 
     # Used setter to ensure the rating is an integer
@@ -25,7 +25,15 @@ class Review:
             print("Rating must be an integer")
 
     # Create the 'rating' property using get_rating and set_rating methods
-    rating = property(get_rating, set_rating)
+    rating = property(rating, set_rating)
+
+    # returns customer
+    def customer(self):
+        return self._customer
+    
+    # returns restaurant
+    def restaurant(self):
+        return self._restaurant
 
 # use @classmethod decorator to define a method that operates on the class itself
     @classmethod
