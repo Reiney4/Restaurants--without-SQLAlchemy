@@ -1,65 +1,68 @@
 class Review:
-    # Class attribute to store all instances of Review
-    all_reviews = []
-
-    def __init__(self, customer, restaurant, rating=None):
-        # Initialize instance attributes
-        self.customer = customer
-        self.restaurant = restaurant
-        # Initialize the private attribute _rating
+# reviews is an empty list so that it will be used to store all instances of reviews.
+    reviews = [] 
+    
+    def __init__ (self, customer, restaurant, rating=None):
+        self._customer = customer
+        self._restaurant = restaurant
         self._rating = None
-        # Adding the review to the all_reviews list
-        Review.all_reviews.append(self)
+         # Adding the review to the reviews list
+        Review.reviews.append(self)  
+
         if rating is not None:
             self.set_rating(rating)
-
-    # Used to retrieve the value of the 'rating' property
-    def rating(self):
-        return self._rating
-
-    # Used setter to ensure the rating is an integer
+   
+    # set_rating method allows rating only if the provided value is a number
     def set_rating(self, rating):
-        if isinstance(rating, int):
+        if isinstance (rating,(int, float)):
             self._rating = rating
+            
         else:
-            print("Rating must be an integer")
+            print("Rating must be a number")
+            
+     # return the rating
+    def get_rating(self):
+        return self._rating   
 
-    # Create the 'rating' property using get_rating and set_rating methods
-    rating = property(rating, set_rating)
-
-    # returns customer
+    rating = property(get_rating, set_rating)
+# returns customer object for that review
     def customer(self):
         return self._customer
-    
-    # returns restaurant
+# returns the restaurant object for that review
     def restaurant(self):
         return self._restaurant
-
-# use @classmethod decorator to define a method that operates on the class itself
-    @classmethod
+            
+    # the decorator @classmethod defines the class method/indicates that the method is a class
     #  the  method all() takes the class itself as the an argument(cls) method returns all reviews that have been created
+    @classmethod
     def all(cls):
-        # created a variable with an empty list
-        printedReviews = []
-        for review in cls.all_reviews:
-            # append cause it has an empty list
-             printedReviews.append(f"Customer: {review.customer}, Rating: {review.rating}")
-
-        return printedReviews
+        return cls.reviews
     
-    # creating an instance of the review class
-myreview = Review("Valerie Kandagor", "Sippin serenade", 19)
-# newreview = Review("Enrico Suarez", "Del Ruiz", " 20")
+    def __repr__(self):
+        return f"{self._customer} ,{self._restaurant} {self._rating}"
+    
+# creating an instance of the review class
+myreview = Review("Valerie", "Sippin serenade", 15)
+newreview = Review("Kendy", "Del Ruiz", 14)
 
 # getting the ratings of the reviews using the rating() method
 print(myreview.rating)
-# print(newreview.rating)
+print(newreview.rating)
+
+# getting the customer reviews
+print(myreview.customer())
+print(newreview.customer())
+
+# getting the restaurant reviews
+print(myreview.restaurant())
+print(newreview.restaurant())
 
 # getting all the reviews
-all_reviews = Review.all()
-print(all_reviews)
+print(myreview)  
+print(newreview)
 
 
 
-    
-     
+        
+        
+        
